@@ -34,7 +34,7 @@ with st.form("smoothie_order", clear_on_submit=True):
             ingredients_string += fruit_chosen + ' '
             st.subheader(fruit_chosen + 'Nutrition Information')
             smoothiefroot_response = requests.get(
-            "https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
+            "https://my.smoothiefroot.com/api/fruit/" + fruit_chosen
             )
 
             sf_df = st.dataframe(
