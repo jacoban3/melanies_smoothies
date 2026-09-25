@@ -43,12 +43,12 @@ with st.form("smoothie_order", clear_on_submit=True):
             st.subheader(fruit_chosen + ' Nutrition Information')
             #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen
            smoothiefroot_response = requests.get(
-           "https://my.smoothiefroot.com/api/fruit/" + fruit_chosen
+             "https://my.smoothiefroot.com/api/fruit/" + fruit_chosen
             )
 
             sf_df = st.dataframe(
-            data=smoothiefroot_response.json(),
-            use_container_width=True
+              data=smoothiefroot_response.json(),
+              use_container_width=True
             )
        #st.write(ingredients_string) - inserts to snowflake table.
         my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
