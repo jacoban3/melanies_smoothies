@@ -46,9 +46,16 @@ with st.form("smoothie_order", clear_on_submit=True):
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
 
-#new section to display smoothiefroot nutrtion information   
-import requests  
-smoothiefroot_response = requests.get("(https://my.smoothiefroot.com/api/fruit/orange)")  
-st.text(smoothiefroot_response).json()
+# new section to display Smoothiefroot nutrition information
+import requests
+
+smoothiefroot_response = requests.get(
+    "https://my.smoothiefroot.com/api/fruit/watermelon"
+)
+
+sf_df = st.dataframe(
+    data=smoothiefroot_response.json(),
+    use_container_width=True
+)
 
 
