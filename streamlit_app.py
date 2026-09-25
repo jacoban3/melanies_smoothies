@@ -46,9 +46,9 @@ with st.form("smoothie_order", clear_on_submit=True):
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
 
-   
+#new section to display smoothiefroot nutrtion information   
 import requests  
-smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
+smoothiefroot_response = requests.get("(https://my.smoothiefroot.com/api/fruit/watermelon)")  
 st.text(smoothiefroot_response).json()
 
 
